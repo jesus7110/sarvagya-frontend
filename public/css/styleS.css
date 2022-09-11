@@ -1,0 +1,172 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.option{
+    width: 220px;
+    margin: 35px auto;
+    position: relative;
+    box-shadow: 0 0 20px 9px #17181b6b;
+    border-radius: 30px;
+  }
+  .toggle-btn{
+    padding: 10px 20px;
+    cursor: pointer;
+    background: transparent;
+    border: 0;
+    outline: none;
+    position: relative;
+    color: #0000ffbd;
+    font-weight: 400;
+    font-size: 16px;
+  }
+  
+  #btn{
+    top: 0;
+    left: 0;
+    position: absolute;
+    width: 110px;
+    height: 100%;
+    background: linear-gradient(to right,black,white);
+    border-radius: 30px;
+    transition: .5s;
+  }
+  #btn-1{
+    right:0;
+    top: 0;
+    position: absolute;
+    width: 120px;
+    height: 100%;
+    background: linear-gradient(to left,black,white);
+    border-radius: 30px;
+    transition: .5s;
+  }
+.container{
+    background: url('../img/slogin.jpg');
+    height: 100vh;
+    background-position: center;
+    background-size: cover;
+}
+.box{
+    position: absolute;
+    background-color: white;
+    height: 80%;
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    left: 10%;
+    top: 10%;
+    opacity: 0.8;
+
+}
+.reg{
+    background-color: gray;
+    width: 84%;
+    border-radius: 166px 0px 0px 449px;
+    font-weight: bold;
+}
+.reg-D{
+    background-color: gray;
+    width: 84%;
+    border-radius: 166px 0px 0px 449px;
+    font-weight: bold;
+}
+.reg-box{
+    padding-left: 20%;
+
+}
+.reg h1{
+    text-align: center;
+    padding: 15px;;
+}
+.reg-D h1{
+    text-align: center;
+    padding: 5px;
+}
+
+.form-group{
+    padding: 12px 20px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.25rem;
+}
+.form-control{
+    width: 65%;
+    border-radius: 10px;
+    height: 31px;
+}
+#emailhelp{
+    font-size: 15px;
+    color: darkblue;
+    margin: 0 5px;
+    font-family: 'Source Code Pro', monospace;
+    text-align: end;
+    padding-right: 10px;
+}
+
+
+/* CSS */
+.pbtn{
+    text-align: center;
+}
+.btn-form {
+    appearance: none;
+    background-color: #000000;
+    border: 2px solid #1A1A1A;
+    border-radius: 17px;
+    box-sizing: border-box;
+    color: #FFFFFF;
+    cursor: pointer;
+    display: inline-block;
+    font-family: Roobert,-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+    font-size: 15px;
+    font-weight: 600;
+    line-height: normal;
+    margin: 0;
+    min-height: 34px;
+    min-width: 0;
+    outline: none;
+    padding: 8px 23px;
+    text-align: center;
+    text-decoration: none;
+    transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    width: 47%;
+    will-change: transform;
+    
+}
+
+.btn-form:disabled {
+  pointer-events: none;
+}
+
+.btn-form:hover {
+  box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+  transform: translateY(-2px);
+}
+
+.btn-form:active {
+  box-shadow: none;
+  transform: translateY(0);
+}
+.plog{
+    margin-top: 15%;
+}
+.log{
+    text-align: center;
+}
+.namec{
+    font-size: 18px;
+    padding: 10px;
+}
+.h2{
+    padding: 10px;
+}
+.log i{
+    padding: 20px;
+}
+/*--------------------------------------login page------------------------------*/
+
