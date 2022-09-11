@@ -10,3 +10,10 @@
 .img4{
     background: url(../img/other.jpg);
 }
+.card{
+    height: 125%;
+}
+.dec{
+    padding-bottom: 31px;
+
+}
