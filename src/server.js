@@ -4,6 +4,7 @@ require('dotenv').config();
 const express = require('express');
 const session = require('express-session');
 const { stat, truncate } = require('fs');
+const mongoose = require('mongoose')
 const app = express()
 const http = require('http').createServer(app)
 const path = require('path');
@@ -150,7 +151,9 @@ app.get('/registerD', (req,res)=>{
   res.render('registerD')
 });
 app.get('/userd',auth, (req,res)=>{
-  res.render('userd')
+  res.render('userd',{
+    name:req.curruser.name,
+  })
 });
 app.get('/form',auth, (req,res)=>{
   res.render('form')
@@ -168,7 +171,7 @@ app.post('/form',auth, async(req,res)=>{
      Problem : req.body.problem,
     })
       await formData.save();
-    res.status(201).render('userd');
+    res.status(201).redirect('/userd');
   }catch (error) {
     res.status(400).send(error);
   }
@@ -176,8 +179,16 @@ app.post('/form',auth, async(req,res)=>{
 app.get('/govtdash',dauth, (req,res)=>{
   res.render('govtdash')
 });
-app.get('/pending',dauth, (req,res)=>{
-  res.render('pending')
+app.get('/pending',dauth, async(req,res)=>{
+  await form.find({},(err,foundForm)=>{
+    if(!err){
+      res.render('pending',{
+        problem: foundForm
+      })
+    }else{
+      res.send(err)
+    }
+  }).clone()
 });
 app.get('/solved',dauth, (req,res)=>{
   res.render('solved')
@@ -303,7 +314,7 @@ app.post('/patient', async(req,res)=>{
 
 
     if(isMatch){
-        res.status(202).render('userd');
+        res.status(202).redirect('/userd');
        
              
    }
@@ -335,7 +346,7 @@ app.post('/loginD', async(req,res)=>{
       });
    
     if(isMatch){
-        res.status(202).render('govtdash');
+        res.status(202).redirect('/govtdash');
        
              
    }

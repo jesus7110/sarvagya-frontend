@@ -89,32 +89,14 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
-                                            <td>1234</td>
-                                            <td>LoremIpsum</td>
-                                            <td>swhggfds</td>
-                                            <td>2008/11/28</td>
-                                        </tr>
-                                        <tr>
-                                            <td>1235</td>
-                                            <td>scvbnbdgdm m</td>
-                                            <td>dwefhj</td>
-                                            <td>2009/10/09<br></td>
-                                        </tr>
-                                        <tr>
-                                            <td>1236</td>
-                                            <td>svbnmk;mbk;fbmgldk</td>
-                                            <td>DASFGNM</td>
-                                            <td>2009/01/12<br></td>
-                                        </tr>
-                                        <tr>
-                                            <td>1237</td>
-                                            <td>w;sfmgdk;fnkgfm</td>
-                                            <td>DSFGH</td>
-                                            <td>2012/10/13<br></td>
-                                        </tr>
-                                        <tr></tr>
-                                        <tr></tr>
+                                        <% for(var i=0; i<problem.length; i++) { %>
+                                           <tr> 
+                                                <td><%=i+1%></td>
+                                                <td><%=problem[i].Category%></td>
+                                                <td><%=problem[i].Problem%></td>
+                                                <td><%=problem[i].Date%></td>
+                                            </tr>
+                                        <% } %>
                                     </tbody>
                                     <tfoot>
                                         <tr></tr>
