@@ -15,13 +15,7 @@ const cookieParser = require('cookie-parser');
 
 const auth = require('./middleware/auth');
 const dauth = require('./middleware/dauth');
-// const curruser = require('./middleware/auth');
-// var Puser = curruser;
-// const passport  =require('passport');
-// const localStrategy = require('passport-local').Strategy;
 
-// const bodyParser = require('body-parser');
-// console.log(Puser);
 
 
 // ------------------------------connection to database ------------------------
@@ -66,16 +60,6 @@ app.use(express.static(static_path));
 app.use(express.static(main_path));
 app.use(express.static(__dirname + ''))
 
-// midleware
-// app.use(
-//     session({
-//       secret: "verygoodsecret",
-//       resave: false,
-//       saveUninitialized: true,
-//     })
-//   );
-//   app.use(bodyParser.urlencoded({ extended: false }));
-//   app.use(bodyParser.json());
 
 //------------------handlebars view engine---------------------------
 app.set('view engine','ejs');
@@ -83,54 +67,6 @@ app.set('views',template_path);
 
 
 
-// //------------------------------- Passport Js-----------------------
-// app.use(passport.initialize());
-// app.use(passport.session());
-// //----serialization and deserialization-----------------
-// passport.serializeUser(function (user, done) {
-//   done(null, user.id);
-// });
-
-// passport.deserializeUser(function (id, done) {
-//   users.findById(id, function (err, user) {
-//     done(err, user);
-//   });
-// });
-
-// let currUser;
-// //-----------passport checker------------------ for transfer of curr user to the module------
-// passport.use(
-//   new localStrategy(function (username, password, done) {
-//     Register.findOne({email:username}, function (err, user) {
-//       currUser = username;
-//       if (err) return done(err);
-//       if (!user) return done(null, false, { message: "Incorrect username." });
-
-//       bcrypt.compare(password,user.password, function (err, res) {
-//         if (err) return done(err);
-//         if (res === false)
-//           return done(
-//             null,
-//             false,
-//             { message: "Incorrect password." },
-//             console.log("Incorrect Password")
-//           );
-
-//         return done(null, user);
-//       });
-//     });
-//   })
-// );
-
-// function isLoggedIn(req, res, next) {
-//   if (req.isAuthenticated()) return next();
-//   res.redirect('login');
-// }
-
-// function isLoggedOut(req, res, next) {
-//   if (!req.isAuthenticated()) return next();
-//   res.redirect('/');
-// }
 
 // ------------------server ------register paths ------------------------------
 app.get('/', (req,res)=>{
@@ -196,8 +132,8 @@ app.get('/logoutd', dauth , async(req,res) =>{
 
 // ------------------server ------register paths **end**------------------------------
 
-// creating a new database for patient registration===> in database
-// creating a new database for patient registration===> in database
+// creating a new database for registration===> in database
+// creating a new database for registration===> in database
 app.post('/register', async(req,res)=>{
   try{
       const USerData = new Register({
@@ -228,7 +164,7 @@ app.post('/register', async(req,res)=>{
 
   }
 })
-// creating a new database for doctor registration===> in database
+// creating a new database for  registration===> in database
 app.post('/govt', async(req,res)=>{
   try{
       const DoctorRegister = new DRegister({
@@ -259,7 +195,7 @@ app.post('/govt', async(req,res)=>{
 
   }
 })
-// checking patient login--------------> from database ------------------
+// checking  login--------------> from database ------------------
 app.post('/patient', async(req,res)=>{
    try{
          const email =req.body.email;
@@ -293,7 +229,7 @@ app.post('/patient', async(req,res)=>{
      res.status(404).send("invalid login details");
     }
    });
-// checking doctor login--------------> from database ------------------
+// checking login--------------> from database ------------------
 app.post('/loginD', async(req,res)=>{
    try{
          const email =req.body.email;
@@ -327,6 +263,5 @@ app.post('/loginD', async(req,res)=>{
     res.status(404).send("invalid login details");
     }
    });
-//-------------------------------patient updation work--------------------
-//-----------------------------------updation of patient info ---------------------
+//------------------------------------------
 
