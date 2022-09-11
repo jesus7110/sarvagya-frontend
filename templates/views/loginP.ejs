@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>USER LOGIN FORM</title>
+  <link rel="stylesheet" href="css/styleSL.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+</head>
+<body>
+<div class="logincontainer">
+  <div class="wrapper">
+    <div class="option">
+      <div id="btn"></div>
+      <button onclick="document.location='loginP'" type="button" class="toggle-btn" >User</button>
+      <button onclick="document.location='loginD'" type="button" class="toggle-btn">Govt</button>
+      </div>
+    <header>User Login</header>
+    <form action="/patient" method="POST">
+      <div class="field email">
+        <div class="input-area">
+          <input type="text" id ="pl-email" placeholder="Email Address" name="email">
+          <i class="icon fas fa-envelope"></i>
+          <i class="error error-icon fas fa-exclamation-circle"></i>
+        </div>
+        <div class="error error-txt">Email can't be blank</div>
+      </div>
+      <div class="field password">
+        <div class="input-area">
+          <input type="password" id ="pl-password" placeholder="Password" name="password">
+          <i class="icon fas fa-lock"></i>
+          <i class="error error-icon fas fa-exclamation-circle"></i>
+        </div>
+        <div class="error error-txt">Password can't be blank</div>
+      </div>
+      <div class="pass-txt"><a href="#">Forgot password?</a></div>
+      <input type="submit" value="Login">
+    </form>
+    <div class="sign-txt">Not yet member? <a href="registerP">register now</a></div>
+  </div>
+</div>
+  
+
+  <script src=".js/scriptSL.js"></script>
+
+</body>
+</html>
